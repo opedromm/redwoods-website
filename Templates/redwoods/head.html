@@ -1,0 +1,57 @@
+ <head>
+    
+    <meta charset="utf-8">
+    <title>{{> title}}</title>
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{> description}}">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:type" content="website">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="{{> title}}">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="{{> description}}">
+    
+    {{#entry}}
+      {{^metadata.mythumbnail}}
+    <meta name="twitter:image" content="https://bencallahan.com/i/_ben-in-black-2_cropped.png">
+    <meta name="og:image" content="https://bencallahan.com/i/_ben-in-black-2_cropped.png">
+      {{/metadata.mythumbnail}}
+      {{#metadata.mythumbnail}}
+    <meta name="twitter:image" content="{{{entry.metadata.mythumbnail}}}">
+    <meta name="og:image" content="{{{entry.metadata.mythumbnail}}}">
+      {{/metadata.mythumbnail}}
+    {{/entry}}
+    
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for {{title}}" href="{{{blogURL}}}{{{feedURL}}}">
+    <link rel="icon" href="/i/_favicon.gif" type="image/x-icon">
+    <link rel="stylesheet" href="{{{cssURL}}}">
+    {{#entry}}
+      {{#metadata.externallink}}
+    <link rel="canonical" href="{{{metadata.externallink}}}">
+      {{/metadata.externallink}}
+    
+      {{^metadata.externallink}}
+    <link rel="canonical" href="{{{blogURL}}}{{{url}}}">
+      {{/metadata.externallink}}
+    {{/entry}}
+    {{^entry}}
+
+    <link rel="canonical" href="{{{blogURL}}}{{{localurl}}}">
+
+    {{/entry}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSWZ9HN2KZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DSWZ9HN2KZ');
+</script>
