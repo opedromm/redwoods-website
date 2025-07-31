@@ -1,0 +1,21 @@
+{{#allEntries}}
+  {{#tagged.promo}}
+    {{#tagged.featured}}
+    <div class="ad">
+      <div class="ad-img">
+      {{#metadata.externallink}}
+        <a href="{{{metadata.externallink}}}">
+      {{/metadata.externallink}}
+      {{^metadata.externallink}}
+        <a href="{{{url}}}">
+      {{/metadata.externallink}}
+          <img class="{{{metadata.imagestyle}}}" src="{{{metadata.image}}}" alt="{{{metadata.imagealt}}}" />
+        </a>
+      </div>
+      <div class="ad-info">
+        {{{html}}}
+      </div>
+    </div>
+    {{/tagged.featured}}
+  {{/tagged.promo}}
+{{/allEntries}}
