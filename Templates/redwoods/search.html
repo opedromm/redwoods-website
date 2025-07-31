@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body>
+    {{> header}}
+    <div class="container">
+      <div class="main">
+        <form action='/search'>
+          <label>Can I help you find something?</label>
+          <input placeholder="What are you looking for?" value="{{#query}}{{query}}{{/query}}" name="q" id="search" type="text" />
+        </form>
+
+        <h3 class="filter-title">Show me:</h3>
+        <input class="search-filter" type="radio" id="Everything" name="categories" value="Everything" checked>
+        <input class="search-filter" type="radio" id="Writing" name="categories" value="Writing">
+        <input class="search-filter" type="radio" id="Speaking" name="categories" value="Speaking">
+
+        <ol class="search-filters link-list">
+        <li>
+          <label for="Everything">Everything</label>
+        </li>
+        <li>
+          <label for="Writing">Writing</label>
+        </li>
+        <li>
+          <label for="Speaking">Speaking</label>
+        </li>
+        </ol>
+
+
+        <div class="archives">
+          {{#query}}
+            {{^entries}}
+            <p>Sorry, nothing found for “{{query}}”</p>
+            {{/entries}}
+          {{/query}}
+
+          <ul class="results-list">
+          {{#entries}}
+            {{#tagged.writing}}
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+            {{/tagged.writing}}
+            {{#tagged.speaking}}
+              <li class="Speaking highlighted">
+                <span class="content-type">Speaking</span>
+            {{/tagged.speaking}}
+            {{#metadata.externallink}}
+                <a href="{{{metadata.externallink}}}">{{title}}</a>
+			      {{/metadata.externallink}}
+            {{^metadata.externallink}}
+			        <a href="{{{url}}}">{{title}}</a>
+            {{/metadata.externallink}}
+            
+            <span class="small extra-detail">
+              {{#tagged.writing}}Published on {{/tagged.writing}}
+              {{#tagged.speaking}}Presented on {{/tagged.speaking}}
+			        {{date}}
+            </span>
+            </li>
+          {{/entries}}
+          </ul>
+        </div>
+        
+        {{> footer}}     
+
+      </div> <!-- main -->
+    </div>
+    <script type="text/javascript">
+    var search = document.getElementById('search');
+    search.focus();
+    </script>
+  </body>
+</html>
