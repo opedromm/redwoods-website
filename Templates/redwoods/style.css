@@ -1,0 +1,636 @@
+:root {
+  --prim_c-cream: #F3EFE3;
+  --prim_c-orange: #95532D;
+  --prim_c-green: #787841;
+  --prim_c-blue: #587C7C;
+  --prim_c-gray-00: #000;
+  --prim_c-gray-25: #444;
+  --prim_c-gray-50: #888;
+  --prim_c-gray-75: #ccc;
+  --prim_c-gray-100: #fff;
+  --prim_s-01: 2px;
+  --prim_s-02: 5px;
+  --prim_s-03: 10px;
+  --prim_s-04: 20px;
+  --prim_r-01: .25em;
+  --prim_r-02: .5em;
+  --prim_r-03: .75em;
+  --prim_r-04: 1em;
+  --prim_font-sans: "Source Sans 3", sans-serif;
+  --prim_font-serif: "Source Serif 4", serif;
+
+  --mar-mid: var(--prim_r-04);  
+  --main-bg-color: var(--prim_c-cream);
+  --dark-txt-color: var(--prim_c-cream);
+  --light-txt-color: var(--prim_c-gray-25);
+  --home-header-bg-color: var(--prim_c-orange);
+  --sub-header-bg-color: var(--prim_c-green);
+  --blog-header-bg-color: var(--prim_c-blue);
+  --quarterly-header-bg-color: var(--prim_c-orange);
+  --main-border-size: var(--prim_s-04);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--prim_font-sans);
+  font-size: 1.2em;
+  color: var(--light-txt-color);
+}
+
+h1, h2, h3, h4, h5, h6, .nav {
+  font-family: var(--prim_font-serif);
+}
+
+a, a:visited {
+  color: var(--light-txt-color);
+  text-decoration: underline;
+}
+ 
+/* Inserts the styles required by various options
+on the services page of the dashboard */
+{{{appCSS}}}
+
+/* Will be replaced with the @font-face rules required
+to load which font is selected as the main body font */
+/* {{{body_font.styles}}} */
+
+/* Will be replaced with the @font-face rules required
+to load which font is selected as the main body font */
+{{{coding_font.styles}}}
+
+body, pre.p {
+  /* {{#body_font}} */
+  /* font-family: {{{stack}}}; */
+  /* font-size: {{{font_size}}}px; */
+  /* line-height: {{{line_height}}}; */
+  /* {{/body_font}} */
+  text-rendering: optimizeLegibility;
+  /* color: {{text_color}}; */
+  /* background: {{background_color}}; remove the blot body bg */
+  word-wrap: break-word;
+  /* margin: 10px 15px; */
+}
+
+h1, h2, h3, h4, h5 {
+  margin:0;
+  margin-bottom: .5em;
+  margin-top: 1.5em;
+  line-height: 1.4em;
+}
+p {
+  margin-top: 0;
+}
+h1 {
+  font-size: 2em;
+}
+img {
+  max-width: 100%;
+}
+
+.m_t_mid {
+  margin-top: var(--mar-mid);
+}
+.m_l_mid {
+  margin-left: var(--mar-mid);
+}
+.m_r_mid {
+  margin-right: var(--mar-mid);
+}
+.m_b_mid {
+  margin-bottom: var(--mar-mid);
+}
+
+/* the window borders */
+html::after, html::before, body::after, body::before { 
+  content: "";
+  position: fixed;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+/* the bottom window borders */
+html::after { 
+  left: 0; /*var(--main-border-size);*/
+  right: 0; /*var(--main-border-size);*/
+  bottom: 0;
+  height: var(--main-border-size);
+  background-color: white;
+}
+
+/* the top window borders */
+html::before {
+  left: 0;
+  right: 0;
+  top: 0;
+  height: var(--main-border-size);
+  background-color: white;
+}
+
+/* the right window borders */
+body::after {
+  right: 0;
+  top: 0; /*var(--main-border-size);*/
+  bottom: 0;
+  width: var(--main-border-size);
+  background-color: white;
+}
+
+/* the left window borders */
+body::before {
+  left: 0;
+  top: 0; /*var(--main-border-size);*/
+  bottom: 0;
+  width: var(--main-border-size);
+  background-color: white;
+}
+
+body {
+  margin: var(--main-border-size);
+}
+
+/* the svg */
+#redwoods-logo { 
+  width: 100%;
+  max-width: 10em;
+}
+
+.copyright {
+  position: fixed;
+  transform-origin: center right;
+  transform: rotate(.25turn);
+  right: .5em;
+  bottom: 0;
+  z-index: 20;
+}
+
+.copyright p {
+  font-size: .7em;
+}
+
+.copyright .extra {
+  display: none;
+}
+
+a.logo {
+  padding: .2em .4em;
+}
+
+.header .nav ul {
+  list-style: none;
+  margin: 1em 0 0 0;
+  padding: 0;
+}
+.header .nav li {
+  margin: .2em 0;
+}
+.header .nav a {
+  color: var(--dark-txt-color);
+  padding: .2em .4em;
+  font-weight: 500;
+  text-decoration: none;
+}
+a {
+  transition: background-color .5s;
+  transition: color .5s;
+}
+.header .nav a:hover {
+  background-color: var(--main-bg-color);
+  color: var(--light-txt-color);
+  border-radius: 4px;
+}
+
+.nav .ps-link::before {
+  content: "—";
+  color: var(--dark-txt-color);
+  position: absolute;
+  font-weight: bold;
+  left: .4em;
+  top: .2em;
+}
+
+.nav .ps-link {
+  position: relative;
+  padding-top: 2em;
+}
+
+.ps-link a {
+  font-style: italic;
+}
+
+.container-primary, .container-secondary, .container-header {
+  container-type: inline-size;
+}
+
+#redwoods-community {
+  position: absolute;
+  bottom: var(--main-border-size);
+  left: var(--main-border-size);
+  width: 80%;
+  max-width: 16em;
+}
+
+.ad {
+  border-radius: var(--main-border-size);
+  background-color: var(--prim_c-gray-100);
+  padding: calc(var(--main-border-size) / 2);
+  margin-bottom: var(--main-border-size);
+  /* display: flex; */
+}
+.ad-img {
+  width: 100%;
+  height: 10em;
+}
+.ad-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(var(--main-border-size) / 2);
+}
+
+.ad-img img.cover {
+  object-fit: cover;
+}
+.ad-img img.bottom {
+  object-position: bottom;
+}
+.ad-img img.contain {
+  object-fit: contain;
+}
+.ad-img img.center {
+  object-position: center;
+}
+.ad h2, .ad p {
+  margin: .5em var(--main-border-size);
+}
+
+@container (min-width: 650px) {
+  /* .ad img {
+    float: left;
+    width: 30%;
+    margin-right: 0;
+  }
+  .ad .ad-info {
+    float: right;
+    width: calc(100% - calc(30% + var(--main-border-size)));
+  } */
+  .ad {
+    display: flex;
+  }
+  .ad-img {
+    height: auto;
+    width: auto;
+  }
+}
+
+.header {
+  background-color: var(--sub-header-bg-color);
+  background-repeat: no-repeat;
+  background-image: url(/i/_trees-01.png);
+  background-attachment: local;
+  background-position-y: 30px;
+  background-position-x: 5em; /*25vw;*/
+  padding: var(--main-border-size);
+  padding-top: calc(.4em + var(--main-border-size));
+  border-radius: var(--main-border-size) var(--main-border-size) 0 0;
+  height: 50vh;
+  position: relative;
+}
+.page_home .header {
+  background-color: var(--home-header-bg-color);
+}
+.page_blog .header {
+  background-color: var(--blog-header-bg-color);
+}
+.page_blog .headline em {
+  color: var(--blog-header-bg-color);
+}
+
+.page_the-quarterly .header {
+  background-color: var(--quarterly-header-bg-color);
+}
+.page_the-quarterly .headline em {
+  color: var(--quarterly-header-bg-color);
+}
+
+.columns {
+  display: grid;
+  /* padding: 0 calc(var(--main-border-size)*2); */
+}
+
+.columns section {
+  padding-top: 1em;
+}
+
+.headline {
+  font-size: 1.75em;
+  line-height: 1.1em;
+  font-weight: 900;
+  /* padding: .5em; */
+  /* padding: calc(var(--main-border-size)*2); */
+  text-wrap: balance;
+}
+.headline em {
+  font-style: normal;
+  color: var(--prim_c-green);
+}
+h2.headline {
+  margin-top: 0;
+}
+
+.hook {
+  font-size: 1.2em;
+}
+
+.columns img {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.container-primary img {
+  border-radius: calc(var(--main-border-size) / 2);
+}
+
+img.s_mid {
+  width: 50%;
+  height: auto;
+  margin-left: 25%;
+}
+img.s_lrg {
+  width:100%;
+  max-width: 100%;
+  height: auto;
+  /* margin-left: calc(25%/2); */
+}
+
+.quotes ul, .quotes ol {
+  margin: 0;
+  padding: 0;
+}
+.quotes li {
+  list-style: none;
+  margin: 1em 0 2em 0;
+}
+.quotes blockquote {
+  margin: 0;
+}
+
+@container (min-width: 415px) {
+  img.s_mid {
+    width: 30%;
+    float: right;
+    /* margin-top: 0; */
+    margin-left: 1em;
+    margin-right: 0;
+    /* margin-bottom: 1em; */
+  }
+  img.s_lrg {
+    /* width: 50%;
+    float: right; */
+    /* margin-top: 0; */
+    /* margin-left: 1em; */
+    /* margin-right: 0; */
+    /* margin-bottom: 1em; */
+  }
+  .columns {
+    padding-top: 2em;
+  }
+}
+
+@media (min-height: 650px) {
+  .header {
+    min-height: 24em;
+  }
+}
+@container (min-width: 700px) {
+  .header {
+    background-position-x: 10vw;
+  }
+
+  #redwoods-community {    
+    left: auto;
+    right: var(--main-border-size);
+  }
+}
+@container (min-width: 800px) {
+  .headline {
+    font-size: 3em;
+    /* padding: 1em; */
+  }
+  .columns {
+    gap: calc(var(--main-border-size)*2);
+    grid-template-columns: 1fr 1fr;
+    padding: 0 5em;
+    padding: 1em 1.5em;
+  }
+  /* .columns section.hook {
+    grid-column: 1 / 2;
+  }
+  .columns section#values {
+    grid-column: 2/2;
+  } */
+}
+
+.container-primary, .container-secondary, .container-footer {
+  background-color: var(--main-bg-color);
+  padding: calc(var(--main-border-size)*2);
+}
+.container-footer {
+  border-radius: 0 0 var(--main-border-size) var(--main-border-size);
+}
+.container-footer p {
+  margin: 0;
+}
+
+@media (min-height: 30em) {
+  .copyright .extra {
+    display: inline;
+  }
+}
+
+
+.container-grid {
+  display: grid;
+  grid-column-gap: var(--main-border-size);
+  grid-row-gap: 0;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 25% 25% 25% 25%;
+  width: calc(100% - calc(var(--main-border-size) * 3));
+}
+
+.item {
+  grid-column: 1 / 5;
+}
+
+
+.list-special {
+  padding: 0;
+  font-weight: 200;
+}
+
+.list-special h1, .list-special h2 {
+  font-family: var(--prim_font-sans);
+  font-weight: 400;
+  line-height: 1.1em;
+}
+.list-special li {
+  list-style: none;
+  margin-bottom: var(--prim_s-03);
+}
+.list-special li a {
+  display: block;
+  background-color: var(--prim_c-green);
+  border-radius: calc(var(--main-border-size)/2);
+  color: white;
+  text-decoration: none;
+}
+.c-blue li a {
+  background-color: var(--prim_c-blue);
+}
+.c-orange li a {
+  background-color: var(--prim_c-orange);
+}
+.list-special .li-container {
+  display: flex;
+}
+.list-special .list-meta {
+  background-color: rgba(0,0,0,.15);
+  border-top-left-radius: calc(var(--main-border-size)/2); 
+  border-bottom-left-radius: calc(var(--main-border-size)/2); 
+  width: 20%;
+  align-content: center;
+  text-align: left;
+  padding: .5em .2em .5em var(--main-border-size);
+  font-size: 1.2em;
+  line-height: .9em;
+  font-weight: 600;
+}
+.list-special .list-meta small {
+  display: block;
+  font-size: .7em;
+  font-weight: 200;
+}
+.list-special .list-main {
+  width: 80%;
+  padding: calc(var(--main-border-size) * .5) var(--main-border-size);
+  font-size: .8em;
+}
+.list-special .list-main * {
+  padding:0;
+  margin:0;
+}
+.list-special .list-main h1 {
+  font-size: 1.2em;
+}
+.list-special .list-main h1,
+.list-special .list-main h2 {
+  margin-top: .25em;
+}
+
+
+.container-secondary .grouping {
+  margin-bottom: 2em;
+}
+
+@media (min-width: 850px) {
+  .container-header {
+    grid-column: 1 / 3;
+    /* grid-row: 1 / 3; */
+  }
+  .container-header .header {
+    position: fixed;
+    height: calc(100vh - calc(var(--main-border-size) * 2));
+    width: calc(50vw - calc(var(--main-border-size) * 1.5));
+  }
+
+  .container-primary {
+    border-radius: var(--main-border-size) var(--main-border-size) 0 0;
+    /* border-radius: var(--main-border-size); */
+  }
+  .container-primary, .container-secondary, .container-footer {
+    grid-column: 3 / 5;
+  }
+  
+  #redwoods-community {
+    bottom: calc(var(--main-border-size)*2);
+  }
+}
+
+/*  This won't trigger—not sure why, so moved it into media queries instead 
+@container (min-height: 1024px) {
+  .container-header .header {
+    background-position-y: bottom;
+  }
+} */
+
+
+@media (min-width: 850px) and (min-height: 1005px) {
+  .container-header .header {
+    position: fixed;
+    /* height: calc(100vh - calc(var(--main-border-size) * 2));
+    width: calc(50vw - calc(var(--main-border-size) * 1.5)); */
+    
+    background-position-y: bottom; /* would rather this be in a content query, but can't get it t work */
+    /* background-position-y: top 70%; */
+    /* background-position-x: 10%; */
+  }
+}
+@media (max-height: 400px) {
+  .container-header .header {
+    /* position: relative; */
+  }
+  #redwoods-community {
+    display: none;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container-grid {
+      grid-template-columns: 33.3% 33.3% 33.3%;
+      width: calc(100% - calc(var(--main-border-size) * 2));
+      /* max-width: 1600px; */
+  }
+
+  .container-header .header {
+    position: relative;
+    height: auto;
+    width: auto;
+    background-position-y: top; /* would rather this be in a content query, but can't get it t work */
+  }
+  #redwoods-community {
+    bottom: var(--main-border-size);
+  }
+  .container-header, .container-primary {
+    grid-column: 1 / 3;
+  }
+  .container-primary {
+    border-radius: 0;
+    border-radius: 0 0 var(--main-border-size) var(--main-border-size);
+  }
+  .container-secondary {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    border-radius: var(--main-border-size);
+    padding: var(--main-border-size);
+  }
+  
+  .container-footer {
+    grid-column: 1 / 4;
+    grid-row: 3;
+    margin-top: var(--main-border-size);
+    border-radius: var(--main-border-size);
+  }
+}
+
+@media (min-width: 1600px) {
+  /* html {
+    background-image: url(/i/_trees-02.png), url(/i/_trees-03.png);
+    background-attachment: fixed, fixed;
+    background-position: bottom left, bottom right;
+    background-repeat: no-repeat, no-repeat;
+    background-blend-mode: luminosity;
+  } */
+}
