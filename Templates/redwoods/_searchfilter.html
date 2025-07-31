@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body>
+    {{> header}}
+    <div class="container">
+      <div class="main">
+        <form action='/searchfilter'>
+          <label>Can I help you find something?</label>
+          <input placeholder="What are you looking for?" value="{{#query}}{{query}}{{/query}}" name="q" id="search" type="text" />
+        </form>
+
+        <h3>Show me:</h3>
+        <input class="search-filter" type="radio" id="Everything" name="categories" value="Everything" checked>
+        <input class="search-filter" type="radio" id="Writing" name="categories" value="Writing">
+        <input class="search-filter" type="radio" id="Speaking" name="categories" value="Speaking">
+
+        <ol class="search-filters link-list">
+        <li>
+          <label for="Everything">Everything</label>
+        </li>
+        <li>
+          <label for="Writing">Writing</label>
+        </li>
+        <li>
+          <label for="Speaking">Speaking</label>
+        </li>
+        </ol>
+
+        <div class="archives">
+
+          <ul class="results-list">
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+              <a href="/observation">Observation</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              July 31, 2023
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+              <a href="/design-system-doc-site-findability">Design System Doc Site Findability</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              July 28, 2023
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+              <a href="/stay-true">Stay True</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              July 27, 2023
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+              <a href="/design-system-metrics-correlation">Design System Metrics Correlation</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              July 25, 2023
+            </span>
+            </li>
+              <li class="Speaking highlighted">
+                <span class="content-type">Speaking</span>
+                <a href="https://www.ux-lx.com/speakers/ben-callahan.html">User Experience Lisbon</a>
+            
+            <span class="small extra-detail">
+              
+              Presented on 
+              May 23, 2023
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+                <a href="https://sparkbox.com/foundry/compatability_of_organizational_culture_and_design_system_team_subculture_important_to_succes_of_a_design_system">Design System Culture</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              March 23, 2023
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+                <a href="https://foundry.sparkbox.com/foundry/mature_a_design_system_consider_subscribers_stakeholders_iteration_education_engagement_evolution">A Framework for Maturing a Design System</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              January 11, 2023
+            </span>
+            </li>
+              <li class="Speaking highlighted">
+                <span class="content-type">Speaking</span>
+                <a href="https://smashingconf.com/meets-design-systems">Smashing Meets Design Systems</a>
+            
+            <span class="small extra-detail">
+              
+              Presented on 
+              November 15, 2022
+            </span>
+            </li>
+              <li class="Speaking highlighted">
+                <span class="content-type">Speaking</span>
+                <a href="https://www.clarityconf.com/person/ben-callahan">Clarity Conference</a>
+            
+            <span class="small extra-detail">
+              
+              Presented on 
+              November 9, 2022
+            </span>
+            </li>
+              <li class="speaking highlighted">
+                <span class="content-type">Speaking</span>
+                <a href="https://amuseconf.com/2022/speakers#ben-callahan">Amuse UX</a>
+            
+            <span class="small extra-detail">
+              
+              Presented on 
+              October 5, 2022
+            </span>
+            </li>
+              <li class="Speaking highlighted">
+                <span class="content-type">Speaking</span>
+                <a href="https://smashingconf.com/freiburg-2022/speakers/ben-callahan/">Smashing Conference</a>
+            
+            <span class="small extra-detail">
+              
+              Presented on 
+              September 5, 2022
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+              <a href="/fluency">Fluency</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              June 27, 2022
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+                <a href="https://sparkbox.com/foundry/design_system_consistency_versus_flexibility_design_system_constraints">Consistency vs Flexibility: The Myth of Creative Restraint in Design Systems</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              June 9, 2022
+            </span>
+            </li>
+              <li class="Speaking highlighted">
+                <span class="content-type">Speaking</span>
+                <a href="https://www.laproductconf.com/paris/lpc">La Product Conference</a>
+            
+            <span class="small extra-detail">
+              
+              Presented on 
+              June 9, 2022
+            </span>
+            </li>
+              <li class="Speaking highlighted">
+                <span class="content-type">Speaking</span>
+                <a href="https://www.laproductconf.com/madrid/lpc">La Product Conference</a>
+            
+            <span class="small extra-detail">
+              
+              Presented on 
+              May 19, 2022
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+                <a href="https://sparkbox.com/foundry/design_system_makeup_design_system_layers_parts_of_a_design_system">The Anatomy of a Design System</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              April 13, 2022
+            </span>
+            </li>
+              <li class="Speaking highlighted">
+                <span class="content-type">Speaking</span>
+                <a href="https://frontconference.com/speakers/ben-callahan">Front Conference</a>
+            
+            <span class="small extra-detail">
+              
+              Presented on 
+              August 25, 2021
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+                <a href="https://sparkbox.com/foundry/design_system_maturity_model">A Maturity Model for Design Systems</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              February 23, 2021
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+                <a href="https://alistapart.com/article/selling-design-systems/">The Never-Ending Job of Selling Design Systems</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              February 11, 2021
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+                <a href="https://seesparkbox.com/foundry/website_accessibility_through_responsive_web_design">Be Better: Accessibility</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              October 15, 2018
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+                <a href="https://seesparkbox.com/foundry/be_better_unity">Be Better: Unity</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              June 11, 2018
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+                <a href="https://seesparkbox.com/foundry/be_better_investing_in_your_team">Be Better: Investing in Your Team</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              October 16, 2017
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+              <a href="/project-drag">Project Drag</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              September 22, 2015
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+              <a href="/roots">Roots</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              February 23, 2015
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+                <a href="https://seesparkbox.com/foundry/dissecting_design">Dissecting Design</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              September 4, 2013
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+                <a href="https://foundry.sparkbox.com/foundry/group_improvisation">Group Improvisation</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              July 3, 2013
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+                <a href="https://sparkbox.com/foundry/there_is_no_breakpoint">There is no Breakpoint</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              February 7, 2013
+            </span>
+            </li>
+              <li class="Writing highlighted">
+                <span class="content-type">Writing</span>
+                <a href="https://sparkbox.com/foundry/the_responsive_dip">The Responsive Dip</a>
+            
+            <span class="small extra-detail">
+              Published on 
+              
+              June 19, 2012
+            </span>
+            </li>
+          </ul>
+        </div>
+        
+        {{> footer}}     
+
+      </div> <!-- main -->
+    </div>
+    <script type="text/javascript">
+    var search = document.getElementById('search');
+    search.focus();
+    </script>
+  </body>
+</html>
