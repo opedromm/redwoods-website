@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body class="page_writing">
+    {{> header}}
+    <div class="container">
+      <div class="main">
+        <h1>Writing</h1>
+        <h2>One of the best ways to learn something is to write about it.</h2>
+        <p>My journey as a developer, designer, founder, and speaker has been impacted tremendously when I've taken the time to write about what I've learned.</p>
+        <p>There is always someone ahead of you, and there will always be someone a little further behind. I believe it's each person's job to share what they're learning, to help complete that chain of knowledge. Below, you'll find articles, research, notes, and ideas from my journey of learning.</p> 
+        <p>I write and speak mostly about <a href="/tagged/design-systems">design systems</a>, <a href="/tagged/culture">culture</a>, and <a href="/tagged/being-better">being better humans</a>.</p>
+        
+        <div class="all-listings">
+          <h2>Recent Writings</h2>
+	        {{#allEntries}}
+	          {{#tagged.writing}}
+                <div class="listing">
+                {{#metadata.externallink}}
+                  <h3><a href="{{{metadata.externallink}}}">{{title}}</a></h3>
+			          {{/metadata.externallink}}
+                {{^metadata.externallink}}
+			            <h3><a href="{{{url}}}">{{title}}</a></h3>
+                {{/metadata.externallink}}
+                <small class="listing-details">{{date}} | {{metadata.publishedon}}</small>
+                <p>{{metadata.description}}</p>
+                </div> <!-- listing -->
+	          {{/tagged.writing}}
+	        {{/allEntries}}
+         </div> <!-- all-listings -->
+
+         {{> footer}}
+      </div> <!-- main -->
+    </div> <!-- container -->
+  </body>
+</html>
+
