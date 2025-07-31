@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  {{> head}}
+  <body>
+    {{> header}}
+    <div class="container">
+      <div class="main">
+        <h1>{{tag}} content by Ben Callahan</h1>
+        
+
+        <div class="archives">
+          {{#query}}
+            {{^entries}}
+            <p>Sorry, nothing found for “{{query}}”</p>
+            {{/entries}}
+          {{/query}}
+
+
+
+          <ul class="results-list">
+          {{#entries}}
+            {{#tagged.writing}}
+              <li class="writing highlighted">
+                <span class="content-type">Article published on {{date}}</span>
+            {{/tagged.writing}}
+            {{#tagged.speaking}}
+              <li class="speaking highlighted">
+                <span class="content-type">Presentation given on {{date}}</span>
+            {{/tagged.speaking}}
+            {{#metadata.externallink}}
+                <a href="{{{metadata.externallink}}}">{{title}}</a>
+            {{/metadata.externallink}}
+            {{^metadata.externallink}}
+              <a href="{{{url}}}">{{title}}</a>
+            {{/metadata.externallink}}
+            
+<!--             <span class="small extra-detail">
+              {{#tagged.writing}}Published on {{/tagged.writing}}
+              {{#tagged.speaking}}Presented on {{/tagged.speaking}}
+              {{date}}
+            </span> -->
+            </li>
+          {{/entries}}
+          </ul>
+        </div>
+        {{> footer}}
+      </div> <!-- main -->
+    </div>
+  </body>
+</html>
