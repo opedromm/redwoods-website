@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+  <url>
+    <loc>{{blogURL}}</loc> 
+  </url>
+  <url>
+    <loc>{{blogURL}}/archives/</loc> 
+  </url>
+  <url>
+    <loc>{{blogURL}}/writing/</loc> 
+  </url>
+  <url>
+    <loc>{{blogURL}}/speaking/</loc> 
+  </url>
+  <url>
+    <loc>{{blogURL}}/coaching/</loc> 
+  </url>
+  <url>
+    <loc>{{blogURL}}/connect/</loc> 
+  </url>
+  <url>
+    <loc>{{blogURL}}/the-question/</loc> 
+  </url>
+  
+  {{#allEntries}}
+  {{^metadata.skiprss}}
+  <url>
+    <loc>{{blogURL}}{{url}}/</loc> 
+  </url>
+  {{/metadata.skiprss}}
+  {{/allEntries}}  
+</urlset>
